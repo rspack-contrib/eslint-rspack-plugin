@@ -1,12 +1,12 @@
 {
-  "name": "eslint-webpack-plugin",
-  "version": "4.0.1",
-  "description": "A ESLint plugin for webpack",
+  "name": "eslint-rspack-plugin",
+  "version": "4.0.1-alpha",
+  "description": "A ESLint plugin for rspack",
   "license": "MIT",
-  "repository": "webpack-contrib/eslint-webpack-plugin",
+  "repository": "https://github.com/rspack-contrib/eslint-rspack-plugin",
   "author": "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>",
-  "homepage": "https://github.com/webpack-contrib/eslint-webpack-plugin",
-  "bugs": "https://github.com/webpack-contrib/eslint-webpack-plugin/issues",
+  "homepage": "https://github.com/rspack-contrib/eslint-rspack-plugin",
+  "bugs": "https://github.com/rspack-contrib/eslint-rspack-plugin/issues",
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/webpack"

@@ -10,30 +10,30 @@
 [![chat][chat]][chat-url]
 [![size][size]][size-url]
 
-# eslint-webpack-plugin
+# eslint-rspack-plugin
 
-> This is eslint-webpack-plugin 3.0 which works only with webpack 5. For the webpack 4, see the [2.x branch](https://github.com/webpack-contrib/eslint-webpack-plugin/tree/2.x).
+> This is eslint-rspack-plugin which works only with rspack . Fork from the [eslint-webpack-plugin](https://github.com/webpack-contrib/eslint-webpack-plugin/).
 
 This plugin uses [`eslint`](https://eslint.org/) to find and fix problems in your JavaScript code
 
 ## Getting Started
 
-To begin, you'll need to install `eslint-webpack-plugin`:
+To begin, you'll need to install `eslint-rspack-plugin`:
 
 ```console
-npm install eslint-webpack-plugin --save-dev
+npm install eslint-rspack-plugin --save-dev
 ```
 
 or
 
 ```console
-yarn add -D eslint-webpack-plugin
+yarn add -D eslint-rspack-plugin
 ```
 
 or
 
 ```console
-pnpm add -D eslint-webpack-plugin
+pnpm add -D eslint-rspack-plugin
 ```
 
 > **Note**:
@@ -59,7 +59,7 @@ pnpm add -D eslint
 Then add the plugin to your webpack config. For example:
 
 ```js
-const ESLintPlugin = require('eslint-webpack-plugin');
+const ESLintPlugin = require('eslint-rspack-plugin');
 
 module.exports = {
   // ...

@@ -111,8 +111,16 @@ class ESLintWebpackPlugin {
       const files = [];
 
       // Add the file to be linted
-      compilation.hooks.succeedModule.tap(this.key, addFile);
-      compilation.hooks.stillValidModule.tap(this.key, addFile);
+      compilation.hooks.finishModules.tap(this.key, (modules) => {
+        for(const m of modules ){
+          addFile(m);
+        }
+      })
+      /**
+       * This two hooks will cause peformance problem for rspack
+       */
+      // compilation.hooks.succeedModule.tap(this.key, addFile);
+      // compilation.hooks.stillValidModule.tap(this.key, addFile);
 
       /**
        * @param {Module} module

@@ -7,7 +7,7 @@
 [![node][node]][node-url]
 [![tests][tests]][tests-url]
 [![coverage][cover]][cover-url]
-[![chat][chat]][chat-url]
+[![discussion][discussion]][discussion-url]
 [![size][size]][size-url]
 
 # eslint-rspack-plugin
@@ -36,7 +36,7 @@ or
 pnpm add -D eslint-rspack-plugin
 ```
 
-> **Note**:
+> [!NOTE]
 >
 > You also need to install `eslint >= 8` from npm, if you haven't already:
 
@@ -72,13 +72,13 @@ module.exports = {
 
 You can pass [eslint options](https://eslint.org/docs/developer-guide/nodejs-api#-new-eslintoptions).
 
-> **Note**
+> [!NOTE]
 >
 > The config option you provide will be passed to the `ESLint` class.
 > This is a different set of options than what you'd specify in `package.json` or `.eslintrc`.
 > See the [eslint docs](https://eslint.org/docs/developer-guide/nodejs-api#-new-eslintoptions) for more details.
 
-> **Warning**:
+> [!WARNING]
 >
 > In eslint-webpack-plugin version 1 the options were passed to the now deprecated [CLIEngine](https://eslint.org/docs/developer-guide/nodejs-api#cliengine).
 
@@ -105,6 +105,26 @@ type cacheLocation = string;
 - Default: `node_modules/.cache/eslint-webpack-plugin/.eslintcache`
 
 Specify the path to the cache location. Can be a file or a directory.
+
+### `configType`
+
+- Type:
+
+```ts
+type configType = 'flat' | 'eslintrc';
+```
+
+- Default: `eslintrc`
+
+Specify the type of configuration to use with ESLint.
+
+- `eslintrc` is the classic configuration format available in most ESLint versions.
+- `flat` is the new format introduced in ESLint 8.21.0.
+
+The new configuration format is explained in its [own documentation](https://eslint.org/docs/latest/use/configure/configuration-files-new).
+
+> This configuration format being considered as experimental, it is not exported in the main ESLint module in ESLint 8.
+> You need to set your `eslintPath` to `eslint/use-at-your-own-risk` for this config format to work.
 
 ### `context`
 
@@ -312,7 +332,7 @@ type outputReport =
             | string
             | ((
                 results: Array<import('eslint').ESLint.LintResult>,
-                data?: import('eslint').ESLint.LintResultData | undefined
+                data?: import('eslint').ESLint.LintResultData | undefined,
               ) => string)
           )
         | undefined;
@@ -343,7 +363,7 @@ if none is passed in the default/configured formatter will be used.
 [tests-url]: https://github.com/webpack-contrib/eslint-webpack-plugin/actions
 [cover]: https://codecov.io/gh/webpack-contrib/eslint-webpack-plugin/branch/master/graph/badge.svg
 [cover-url]: https://codecov.io/gh/webpack-contrib/eslint-webpack-plugin
-[chat]: https://badges.gitter.im/webpack/webpack.svg
-[chat-url]: https://gitter.im/webpack/webpack
+[discussion]: https://img.shields.io/github/discussions/webpack/webpack
+[discussion-url]: https://github.com/webpack/webpack/discussions
 [size]: https://packagephobia.now.sh/badge?p=eslint-webpack-plugin
 [size-url]: https://packagephobia.now.sh/result?p=eslint-webpack-plugin

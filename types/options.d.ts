@@ -3,7 +3,7 @@ export type LintResult = import('eslint').ESLint.LintResult;
 export type LintResultData = import('eslint').ESLint.LintResultData;
 export type FormatterFunction = (
   results: LintResult[],
-  data?: LintResultData | undefined
+  data?: LintResultData | undefined,
 ) => string;
 export type OutputReport = {
   filePath?: string | undefined;
@@ -26,6 +26,7 @@ export type PluginOptions = {
   outputReport?: OutputReport | undefined;
   threads?: (number | boolean) | undefined;
   resourceQueryExclude?: (RegExp | RegExp[]) | undefined;
+  configType?: string | undefined;
 };
 export type Options = PluginOptions & ESLintOptions;
 /** @typedef {import("eslint").ESLint.Options} ESLintOptions */
@@ -60,6 +61,7 @@ export type Options = PluginOptions & ESLintOptions;
  * @property {OutputReport=} outputReport
  * @property {number|boolean=} threads
  * @property {RegExp|RegExp[]=} resourceQueryExclude
+ * @property {string=} configType
  */
 /** @typedef {PluginOptions & ESLintOptions} Options */
 /**

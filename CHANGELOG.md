@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.2.0](https://github.com/webpack-contrib/eslint-webpack-plugin/compare/v4.1.0...v4.2.0) (2024-05-24)
+
+
+### Features
+
+* support eslint 9 ([#250](https://github.com/webpack-contrib/eslint-webpack-plugin/issues/250)) ([d25e94c](https://github.com/webpack-contrib/eslint-webpack-plugin/commit/d25e94c90b477d465bf4d7fb6450a9b4ed6936f4))
+
+
+### Bug Fixes
+
+* use `stillValidModule` only `lintDirtyModulesOnly` is disabled ([#253](https://github.com/webpack-contrib/eslint-webpack-plugin/issues/253)) ([b52d1e7](https://github.com/webpack-contrib/eslint-webpack-plugin/commit/b52d1e743e77e657256919ca7b0cdb1d432a1fb9))
+
+## [4.1.0](https://github.com/webpack-contrib/eslint-webpack-plugin/compare/v4.0.0...v4.1.0) (2024-03-14)
+
+
+### Features
+
+* support flat config ([#238](https://github.com/webpack-contrib/eslint-webpack-plugin/issues/238)) ([19cadbe](https://github.com/webpack-contrib/eslint-webpack-plugin/commit/19cadbe3117fa7899eba2424d7bb07bc403160c5))
+
 ### [4.0.1](https://github.com/webpack-contrib/eslint-webpack-plugin/compare/v4.0.0...v4.0.1) (2023-04-10)
 
 

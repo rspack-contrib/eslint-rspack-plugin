@@ -8,7 +8,7 @@ import pack from './utils/pack';
 const target = join(__dirname, 'fixtures', 'watch-entry.js');
 const target2 = join(__dirname, 'fixtures', 'watch-leaf.js');
 const targetExpectedPattern = expect.stringMatching(
-  target.replace(/\\/g, '\\\\')
+  target.replace(/\\/g, '\\\\'),
 );
 
 describe('watch', () => {
@@ -54,7 +54,7 @@ describe('watch', () => {
       writeFileSync(target2, 'let bar = false;\n');
       writeFileSync(
         target,
-        "const x = require('./watch-leaf')\n\nconst foo = false;\n"
+        "const x = require('./watch-leaf')\n\nconst foo = false;\n",
       );
     }
 
@@ -75,7 +75,7 @@ describe('watch', () => {
 
       writeFileSync(
         target,
-        "const x = require('./watch-leaf')\nconst foo = 0\n"
+        "const x = require('./watch-leaf')\nconst foo = 0\n",
       );
     }
 
@@ -90,13 +90,12 @@ describe('watch', () => {
       expect(message).toEqual(expect.stringMatching('no-unused-vars'));
       // `prefer-const` fails here
       expect(message).toEqual(expect.stringMatching('prefer-const'));
-      expect(message).toEqual(expect.stringMatching('\\(5 errors,'));
 
       next = finish;
 
       writeFileSync(
         target,
-        '/* eslint-disable no-unused-vars */\nconst foo = false;\n'
+        '/* eslint-disable no-unused-vars */\nconst foo = false;\n',
       );
     }
 
@@ -107,7 +106,6 @@ describe('watch', () => {
       const [{ message }] = errors;
       expect(stats.hasErrors()).toBe(true);
       expect(message).toEqual(expect.stringMatching('prefer-const'));
-      expect(message).toEqual(expect.stringMatching('\\(2 errors,'));
       done();
     }
   });

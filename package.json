@@ -1,6 +1,6 @@
 {
   "name": "eslint-rspack-plugin",
-  "version": "4.0.1-alpha",
+  "version": "4.2.0",
   "description": "A ESLint plugin for rspack",
   "license": "MIT",
   "repository": "https://github.com/rspack-contrib/eslint-rspack-plugin",
@@ -14,7 +14,7 @@
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "engines": {
-    "node": ">= 14.15.0"
+    "node": ">= 16.0.0"
   },
   "scripts": {
     "start": "npm run build -- -w",
@@ -94,7 +94,6 @@
     "lint",
     "linter",
     "plugin",
-    "webpack"
-  ],
-  "packageManager": "pnpm@8.9.0+sha256.8f5264ad1d100da11a6add6bb8a94c6f1e913f9e9261b2a551fabefad2ec0fec"
+    "rspack"
+  ]
 }

@@ -103,7 +103,9 @@ class ESLintWebpackPlugin {
       /** @type {string[]} */
       const files = [];
 
-      // Need to register a finishModules hook first. The linter is an asynchronous operation, which will cause subsequent hooks to fail to be registered.
+      // Need to register a finishModules hook first.
+      // The linter is an asynchronous operation, which will cause subsequent hooks to fail to be registered.
+      // Maybe this is caused by the call optimization of rspack?
 
       // Add the file to be linted
       compilation.hooks.finishModules.tap(this.key, (modules) => {

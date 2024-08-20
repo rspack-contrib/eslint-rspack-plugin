@@ -1,5 +1,7 @@
 import pack from './utils/pack';
 
+const ignoreOrder = (mockLintFiles) => mockLintFiles.mock.calls[0][0].sort((a1, a2) => a1.length - a2.length > 0 ? -1 : 1);
+
 describe('eslint lint', () => {
   const mockLintFiles = jest.fn().mockReturnValue([]);
 
@@ -29,10 +31,10 @@ describe('eslint lint', () => {
 
     await compiler.runAsync();
     const files = [
-      expect.stringMatching('lint.js'),
       expect.stringMatching('lint-two-entry.js'),
+      expect.stringMatching('lint.js'),
     ];
-    expect(mockLintFiles).toHaveBeenCalledWith(files);
+    expect(ignoreOrder(mockLintFiles)).toEqual(files);
   });
 
   it('should lint more files', async () => {
@@ -44,6 +46,7 @@ describe('eslint lint', () => {
       expect.stringMatching('lint-more.js'),
       expect.stringMatching('lint.js'),
     ];
-    expect(mockLintFiles).toHaveBeenCalledWith(files);
+
+    expect(ignoreOrder(mockLintFiles)).toEqual(files);
   });
 });

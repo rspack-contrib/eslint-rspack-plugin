@@ -11,7 +11,8 @@
     "autofixing",
     "checkstyle",
     "commitlint",
-    "indentifiers"
+    "indentifiers",
+    "rspack"
   ],
 
   "ignorePaths": [

@@ -1,4 +1,3 @@
-import webpack from 'webpack';
 import { rspack } from '@rspack/core';
 import conf from './conf';
 

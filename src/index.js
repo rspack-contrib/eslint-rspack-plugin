@@ -100,6 +100,18 @@ class ESLintWebpackPlugin {
       /** @type number */
       let threads;
 
+      /** @type {string[]} */
+      const files = [];
+
+      // Need to register a finishModules hook first. The linter is an asynchronous operation, which will cause subsequent hooks to fail to be registered.
+
+      // Add the file to be linted
+      compilation.hooks.finishModules.tap(this.key, (modules) => {
+        for (const m of modules) {
+          addFile(m);
+        }
+      })
+
       try {
         ({ lint, report, threads } = await linter(
           this.key,
@@ -111,17 +123,8 @@ class ESLintWebpackPlugin {
         return;
       }
 
-      /** @type {string[]} */
-      const files = [];
-
-      // Add the file to be linted
-      compilation.hooks.finishModules.tap(this.key, (modules) => {
-        for(const m of modules ){
-          addFile(m);
-        }
-      })
       /**
-       * This two hooks will cause peformance problem for rspack
+       * This two hooks will cause performance problem for rspack
        */
       // compilation.hooks.succeedModule.tap(this.key, addFile);
       // compilation.hooks.stillValidModule.tap(this.key, addFile);

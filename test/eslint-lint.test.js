@@ -29,8 +29,8 @@ describe('eslint lint', () => {
 
     await compiler.runAsync();
     const files = [
-      expect.stringMatching('lint-two-entry.js'),
       expect.stringMatching('lint.js'),
+      expect.stringMatching('lint-two-entry.js'),
     ];
     expect(mockLintFiles).toHaveBeenCalledWith(files);
   });

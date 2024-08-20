@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-
+import { rspack } from '@rspack/core';
 import conf from './conf';
 
 /**
@@ -10,7 +10,7 @@ import conf from './conf';
  * @returns {ReturnType<webpack>}
  */
 export default (context, pluginConf = {}, webpackConf = {}) => {
-  const compiler = webpack(conf(context, pluginConf, webpackConf));
+  const compiler = rspack(conf(context, pluginConf, webpackConf));
 
   return {
     runAsync() {

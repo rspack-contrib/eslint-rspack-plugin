@@ -52,7 +52,7 @@
   "dependencies": {
     "@types/eslint": "^8.56.10",
     "jest-worker": "^29.7.0",
-    "micromatch": "^4.0.5",
+    "micromatch": "^4.0.8",
     "normalize-path": "^3.0.0",
     "schema-utils": "^4.2.0"
   },
@@ -62,7 +62,7 @@
     "@babel/preset-env": "^7.25.3",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@rspack/core": "^1.0.0-beta.5",
+    "@rspack/core": "^1.0.7",
     "@types/fs-extra": "^11.0.4",
     "@types/micromatch": "^4.0.9",
     "@types/node": "^20.14.9",
@@ -87,7 +87,7 @@
     "prettier": "^3.3.3",
     "standard-version": "^9.5.0",
     "typescript": "^5.5.4",
-    "webpack": "^5.93.0"
+    "webpack": "^5.95.0"
   },
   "overrides": {
     "devDependencies": {

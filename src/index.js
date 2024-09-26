@@ -106,13 +106,13 @@ class ESLintWebpackPlugin {
       // Need to register a finishModules hook first.
       // The linter is an asynchronous operation, which will cause subsequent hooks to fail to be registered.
       // Maybe this is caused by the call optimization of rspack?
-
-      // Add the file to be linted
       compilation.hooks.finishModules.tap(this.key, (modules) => {
-        for (const m of modules) {
-          addFile(m);
+        if (!this.options.lintDirtyModulesOnly) {
+          for (const m of modules) {
+            addFile(m);
+          }
         }
-      })
+      });
 
       try {
         ({ lint, report, threads } = await linter(
@@ -156,7 +156,22 @@ class ESLintWebpackPlugin {
       }
 
       // Lint all files added
-      compilation.hooks.finishModules.tap(this.key, () => {
+      // DIFF: use seal hook to make sure built modules exists
+      compilation.hooks.seal.tap(this.key, () => {
+        if (this.options.lintDirtyModulesOnly) {
+          // compatible with old rspack which not support built modules
+          if (compilation.builtModules) {
+            for (const m of /** @type {Set<Module>} */ (
+              compilation.builtModules
+            )) {
+              addFile(m);
+            }
+          } else {
+            for (const m of compilation.modules) {
+              addFile(m);
+            }
+          }
+        }
         if (files.length > 0 && threads <= 1) lint(files);
       });
 

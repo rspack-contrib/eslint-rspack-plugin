@@ -1,6 +1,9 @@
 import pack from './utils/pack';
 
-const ignoreOrder = (mockLintFiles) => mockLintFiles.mock.calls[0][0].sort((a1, a2) => a1.length - a2.length > 0 ? -1 : 1);
+const ignoreOrder = (mockLintFiles) =>
+  mockLintFiles.mock.calls[0][0].sort((a1, a2) =>
+    a1.length - a2.length > 0 ? -1 : 1,
+  );
 
 describe('eslint lint', () => {
   const mockLintFiles = jest.fn().mockReturnValue([]);

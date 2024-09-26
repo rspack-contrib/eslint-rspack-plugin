@@ -89,6 +89,12 @@
     "typescript": "^5.5.4",
     "webpack": "^5.93.0"
   },
+  "overrides": {
+    "devDependencies": {
+      "@rspack/binding": "npm:@rspack/binding-canary@1.0.8-canary-8286125d-20240926091417",
+      "@rspack/core": "npm:@rspack/core-canary@1.0.8-canary-8286125d-20240926091417"
+    }
+  },
   "keywords": [
     "eslint",
     "lint",

@@ -10,10 +10,7 @@ describe('formatter eslint', () => {
     expect(stats.hasErrors()).toBe(true);
     expect(stats.compilation.errors[0].message).toBeTruthy();
     const message = JSON.parse(
-      stats.compilation.errors[0].message.replace(
-        '× ESLintError: [eslint]',
-        '',
-      ),
+      stats.compilation.errors[0].message.replace('× [eslint]', ''),
     );
     expect(message.formatter).toEqual('mock');
     expect(message.results).toBeTruthy();
@@ -28,10 +25,7 @@ describe('formatter eslint', () => {
     expect(stats.hasErrors()).toBe(true);
     expect(stats.compilation.errors[0].message).toBeTruthy();
     const message = JSON.parse(
-      stats.compilation.errors[0].message.replace(
-        '× ESLintError: [eslint]',
-        '',
-      ),
+      stats.compilation.errors[0].message.replace('× [eslint]', ''),
     );
     expect(message.formatter).toEqual('mock');
     expect(message.results).toBeTruthy();

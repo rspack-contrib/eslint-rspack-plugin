@@ -46,8 +46,7 @@
     "types"
   ],
   "peerDependencies": {
-    "eslint": "^8.0.0 || ^9.0.0",
-    "webpack": "^5.0.0"
+    "eslint": "^8.0.0 || ^9.0.0"
   },
   "dependencies": {
     "@types/eslint": "^8.56.10",
@@ -62,7 +61,7 @@
     "@babel/preset-env": "^7.25.3",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@rspack/core": "^1.0.7",
+    "@rspack/core": "^1.0.8",
     "@types/fs-extra": "^11.0.4",
     "@types/micromatch": "^4.0.9",
     "@types/node": "^20.14.9",
@@ -88,12 +87,6 @@
     "standard-version": "^9.5.0",
     "typescript": "^5.5.4",
     "webpack": "^5.95.0"
-  },
-  "overrides": {
-    "devDependencies": {
-      "@rspack/binding": "npm:@rspack/binding-canary@1.0.8-canary-8286125d-20240926091417",
-      "@rspack/core": "npm:@rspack/core-canary@1.0.8-canary-8286125d-20240926091417"
-    }
   },
   "keywords": [
     "eslint",
